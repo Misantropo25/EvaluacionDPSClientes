@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Inicio.master.cs" Inherits="EvaluacionDPS.Inicio" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>EVALUACION DPS</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="styles/MasterStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="navbar" >
+            <ul >
+                <li > <a href="Empleados.aspx" > Empleados</a > </li >
+                <li > <a href="Clientes.aspx" > Clientes</a > </li >
+                <li > <a href="Proveedores.aspx" > Proveedores</a > </li >
+            </ul >
+        </div >   
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+
+    </form>
+</body>
+</html>

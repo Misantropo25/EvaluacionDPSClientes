@@ -1,0 +1,130 @@
+﻿body {
+}
+
+.container {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-weight: bold;
+    font-family: Forte;
+}
+
+.Titulo1 {
+    color: #F20A56;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    font-family: Forte;
+    margin-top: -10px;
+}
+
+
+.columna1 {
+    margin-right: -120px;
+    width: 150px;
+    margin-top: 50px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna2 {
+    margin-left: 280px;
+    margin-right: 20px;
+    margin-top: -232px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna2x {
+    margin-left: 280px;
+    margin-right: 20px;
+    margin-top: -282px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna4 {
+    margin-left: 570px;
+    margin-right: 20px;
+    margin-top: -219px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna3 {
+    margin-left: 1200px;
+    margin-right: 20px;
+    margin-top: -219px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna5 {
+    margin-left: 800px;
+    margin-right: 20px;
+    margin-top: -219px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna6 {
+    margin-left: 870px;
+    margin-right: 20px;
+    margin-top: -197px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna7 {
+    margin-left: 270px;
+    margin-right: 100px;
+    marker-mid: 250px;
+    margin-top: 190px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.columna8 {
+    margin-left: 50px;
+    margin-right: 100px;
+    marker-mid: 250px;
+    margin-top: -100px;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.notas {
+    width: 50%;
+    height: 50%;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Forte;
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-gap: 300px;
+}
+
+.grid-item1 {
+    background: white;
+    text-align: center;
+    border: black 5px solid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.grid-item2 {
+    background: grey;
+    text-align: center;
+    border: black 5px solid;
+}

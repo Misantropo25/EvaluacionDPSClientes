@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listarEmpleados">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarEmpleadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarEmpleadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TitleOfCourtesy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BirthDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HireDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportsTo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhotoPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarEmpleadoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BuscarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarEmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TitleOfCourtesy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BirthDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HireDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportsTo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhotoPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarEmpleadoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarEmpleadoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarClientes">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarClientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarClienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarClienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarClienteResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarProveedores">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarProveedoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarProveedoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomePage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarProveedorResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarProveedorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SupplierID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomePage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarProveedorResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SupplierID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarProveedorResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listarEmpleadosSoapIn">
+    <wsdl:part name="parameters" element="tns:listarEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="listarEmpleadosSoapOut">
+    <wsdl:part name="parameters" element="tns:listarEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="AgregarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="BuscarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="EliminarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:listarClientes" />
+  </wsdl:message>
+  <wsdl:message name="listarClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:listarClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarCliente" />
+  </wsdl:message>
+  <wsdl:message name="AgregarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarCliente" />
+  </wsdl:message>
+  <wsdl:message name="BuscarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarCliente" />
+  </wsdl:message>
+  <wsdl:message name="EliminarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarProveedoresSoapIn">
+    <wsdl:part name="parameters" element="tns:listarProveedores" />
+  </wsdl:message>
+  <wsdl:message name="listarProveedoresSoapOut">
+    <wsdl:part name="parameters" element="tns:listarProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="AgregarProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="BuscarProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="listarEmpleados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Empleados con PA</wsdl:documentation>
+      <wsdl:input message="tns:listarEmpleadosSoapIn" />
+      <wsdl:output message="tns:listarEmpleadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEmpleado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crear / Agregar Empleado con PA</wsdl:documentation>
+      <wsdl:input message="tns:AgregarEmpleadoSoapIn" />
+      <wsdl:output message="tns:AgregarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpleado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Empleado con PA</wsdl:documentation>
+      <wsdl:input message="tns:BuscarEmpleadoSoapIn" />
+      <wsdl:output message="tns:BuscarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpleado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Empleado con PA</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarEmpleadoSoapIn" />
+      <wsdl:output message="tns:ActualizarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmpleado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Empleado con PA</wsdl:documentation>
+      <wsdl:input message="tns:EliminarEmpleadoSoapIn" />
+      <wsdl:output message="tns:EliminarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarClientes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Clientes con PA</wsdl:documentation>
+      <wsdl:input message="tns:listarClientesSoapIn" />
+      <wsdl:output message="tns:listarClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crear / Agregar Cliente con PA</wsdl:documentation>
+      <wsdl:input message="tns:AgregarClienteSoapIn" />
+      <wsdl:output message="tns:AgregarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Cliente con PA</wsdl:documentation>
+      <wsdl:input message="tns:BuscarClienteSoapIn" />
+      <wsdl:output message="tns:BuscarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Cliente con PA</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarClienteSoapIn" />
+      <wsdl:output message="tns:ActualizarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Cliente con PA</wsdl:documentation>
+      <wsdl:input message="tns:EliminarClienteSoapIn" />
+      <wsdl:output message="tns:EliminarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarProveedores">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Proveedores con PA</wsdl:documentation>
+      <wsdl:input message="tns:listarProveedoresSoapIn" />
+      <wsdl:output message="tns:listarProveedoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarProveedor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Crear / Agregar Proveedor con PA</wsdl:documentation>
+      <wsdl:input message="tns:AgregarProveedorSoapIn" />
+      <wsdl:output message="tns:AgregarProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProveedor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Proveedor con PA</wsdl:documentation>
+      <wsdl:input message="tns:BuscarProveedorSoapIn" />
+      <wsdl:output message="tns:BuscarProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProveedor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Proveedor con PA</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarProveedorSoapIn" />
+      <wsdl:output message="tns:ActualizarProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProveedor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Proveedor con PA</wsdl:documentation>
+      <wsdl:input message="tns:EliminarProveedorSoapIn" />
+      <wsdl:output message="tns:EliminarProveedorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarEmpleados">
+      <soap:operation soapAction="http://tempuri.org/listarEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/AgregarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/BuscarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/ActualizarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/EliminarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarClientes">
+      <soap:operation soapAction="http://tempuri.org/listarClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap:operation soapAction="http://tempuri.org/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCliente">
+      <soap:operation soapAction="http://tempuri.org/BuscarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/ActualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <soap:operation soapAction="http://tempuri.org/EliminarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarProveedores">
+      <soap:operation soapAction="http://tempuri.org/listarProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarProveedor">
+      <soap:operation soapAction="http://tempuri.org/AgregarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProveedor">
+      <soap:operation soapAction="http://tempuri.org/BuscarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProveedor">
+      <soap:operation soapAction="http://tempuri.org/ActualizarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProveedor">
+      <soap:operation soapAction="http://tempuri.org/EliminarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarEmpleados">
+      <soap12:operation soapAction="http://tempuri.org/listarEmpleados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/AgregarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/BuscarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/EliminarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarClientes">
+      <soap12:operation soapAction="http://tempuri.org/listarClientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCliente">
+      <soap12:operation soapAction="http://tempuri.org/AgregarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCliente">
+      <soap12:operation soapAction="http://tempuri.org/BuscarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCliente">
+      <soap12:operation soapAction="http://tempuri.org/EliminarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarProveedores">
+      <soap12:operation soapAction="http://tempuri.org/listarProveedores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarProveedor">
+      <soap12:operation soapAction="http://tempuri.org/AgregarProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProveedor">
+      <soap12:operation soapAction="http://tempuri.org/BuscarProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProveedor">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProveedor">
+      <soap12:operation soapAction="http://tempuri.org/EliminarProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44302/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44302/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
